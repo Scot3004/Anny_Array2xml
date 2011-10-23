@@ -1,0 +1,40 @@
+Array2xml: a class to convert a PHP array to XML
+It also takes into account attributes and cdata unlike SimpleXML in PHP
+It returns the XML in the form of a DOMDocument object for further manipulation
+It throws an exception if a tag or attribute name has illegal characters
+ *
+Original Array2xml
+------------------
+Author:  Lalit Patel
+Website: http://www.lalit.org/lab/convert-php-array-to-xml-with-attributes
+License: Apache License 2.0
+         http://www.apache.org/licenses/LICENSE-2.0
+Version: 0.1 (10 July 2011)
+Version: 0.2 (16 August 2011)
+         - Replaced htmlentities() with htmlspecialchars() (Thanks to Liel Dulev)
+         - Fixed an edge case where root node has a false/null/0 value. (Thanks to Liel Dulev)
+Version: 0.3 (22 August 2011)
+         - Fixed tag sanitize regex which didn't allow tagnames with single character.
+Version: 0.4 (18 September 2011)
+         - Added support for CDATA section using @cdata instead of @value.
+ *
+Magento Anny_Array2xml
+----------------------
+Author:  Aneurin "Anny" Barker Snook
+Website: http://anny.fm/
+Repo:    https://github.com/annyfm/Anny_Array2xml
+License: Apache License 2.0 as above
+Version: 0.5 (23 October 2011)
+         - Adapted for Magento along with slight changes to structure and tidying up up of code.
+Usage:
+  In Magento this class should be installed at /app/code/community/Anny/Array2xml.
+  To get a converter (as this is model-based, every instance is distinct),
+    $converter = Mage::getModel('array2xml/converter');
+  To manually init,
+    $converter->init( $version[, $encoding[, $formatOutput]] );
+  You can choose to skip init to use defaults. To import xml,
+    $converter->setTopNodeName($topNodeName)->importArray($data);
+  And to export it, just
+    echo $converter;
+  To reuse outside of Magento, just remove the 'extends' declaration and the class should run
+  independently without issue.
