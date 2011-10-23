@@ -2,7 +2,7 @@ Array2xml: a class to convert a PHP array to XML
 It also takes into account attributes and cdata unlike SimpleXML in PHP
 It returns the XML in the form of a DOMDocument object for further manipulation
 It throws an exception if a tag or attribute name has illegal characters
- *
+
 Original Array2xml
 ------------------
 Author:  Lalit Patel
@@ -17,7 +17,7 @@ Version: 0.3 (22 August 2011)
          - Fixed tag sanitize regex which didn't allow tagnames with single character.
 Version: 0.4 (18 September 2011)
          - Added support for CDATA section using @cdata instead of @value.
- *
+
 Magento Anny_Array2xml
 ----------------------
 Author:  Aneurin "Anny" Barker Snook
