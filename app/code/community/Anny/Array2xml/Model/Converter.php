@@ -150,7 +150,7 @@ class Anny_Array2xml_Model_Converter extends Mage_Core_Model_Abstract
         {
           foreach( $value as $key2=>$value2 )
           {
-            $node->appendChild( $this->parse( $key, $v ));
+            $node->appendChild( $this->parse( $key, $value2 ));
           }
         }
         else
